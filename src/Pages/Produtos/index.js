@@ -20,10 +20,6 @@ function Produto() {
     })();
   }, []);
 
-  if (loading) {
-    return <div className="loading">Carregando dados</div>;
-  }
-
   return (
     <>
       <div className="titulo_prod">
