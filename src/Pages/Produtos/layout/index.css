@@ -8,12 +8,15 @@
     flex-direction: column;
     /* min-width: 200px; */
     align-items: center;
+    width: 100%;
+    padding: 0px;
 }
 
 .card {
     flex: 1;
     margin-left: 4%;
     margin-top: 2%;
+    margin-bottom: 5%;
     border: 1px solid white;
     border-radius: 10px;
     overflow: hidden;
@@ -47,12 +50,17 @@
     font-size: 1rem;
     /* animation-name: move;
     animation-duration: 2s; */
+    margin-top: 5px;
 }
+#carrinho{
+    margin-top: 5px;
+}
+
 .botao:hover{
     border: 1% white;
 }
 .card:hover{
-    box-shadow:0 0.1px 0.1px 0.1px #666;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     transform: scale(1.05);
 }
 .card-text{
@@ -67,13 +75,33 @@
     width: 100%;
     text-align: center;
     color: forestgreen;
+    display: inline-block;
+
+}
+h1{
+    display: inline-block;
+    flex: 1;
+    flex-direction: column;
 }
 input{
-    border-radius: 5px;
+    /* border-radius: 5px ;
+    border: 20px forestgreen;
     padding-left: 5px;
-    height: 5vh;
-    width: 52vh;
+    height: 2em;
+    width: 30%;
+    min-width: 120px;
     margin-top: 5px;
     animation-name: fade;
     animation-duration: 2s;
+    display: inline-block; */
+    border: 2px solid forestgreen;
+    border-radius: 5px ;
+    width: 50%;
+    min-width: 120px;
+}
+.div_pesquisa{
+    
+}
+#lupa{
+    margin-right: 0.7%;
 }
