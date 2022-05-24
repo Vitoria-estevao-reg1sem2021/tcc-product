@@ -2,15 +2,17 @@ import { getProducts, getProductsImage } from "./../../services/api";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import "./layout/index.css";
+import * as FaIcons from "react-icons/fa";
+
 
 
 function Produto() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [busca, setBusca] = useState([]);
+  const [busca, setBusca] = useState('');
   console.log(busca);
 
-  // const filtroProd = product.filter((prod) => product.id.startsWith(busca));
+  const filtroProd = products.filter((prod) => prod.description.toLowerCase().startsWith(busca.toLowerCase()));
 
   useEffect(() => {
     (async () => {
@@ -24,13 +26,16 @@ function Produto() {
     <>
       <div className="titulo_prod">
       <h1>Produtos</h1>
+      <div className="div_pesquisa">
+      <FaIcons.FaSearch id="lupa"/>
       <input type="text" 
         value={busca}
         onChange={(ev)=> setBusca(ev.target.value)}
       />
       </div>
+      </div>
       <div className="produtos">
-        {products.map((product) => (
+        {filtroProd.map((product) => (
           <div className="card" key={product.id}>
             <img
               style={{ width: 150 }}
@@ -48,7 +53,7 @@ function Produto() {
                 Categoria: {product.category.description}
               </p>
               <button type="button" className="botao">
-                +
+              <FaIcons.FaCartPlus id="carrinho"/>
               </button>
             </div>
           </div>
