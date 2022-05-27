@@ -28,10 +28,15 @@ function Produto() {
       <h1>Produtos</h1>
       <div className="div_pesquisa">
       <FaIcons.FaSearch id="lupa"/>
-      <input type="text" 
+      <input type="text"
         value={busca}
         onChange={(ev)=> setBusca(ev.target.value)}
       />
+      <button className="bnt_add">
+      <a href="/cadastroProd">
+      <FaIcons.FaPlus id="add_prod"/>
+       </a>
+      </button>
       </div>
       </div>
       <div className="produtos">

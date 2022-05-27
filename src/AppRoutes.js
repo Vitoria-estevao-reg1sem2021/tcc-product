@@ -12,6 +12,7 @@ import { AuthProvider, AuthContext } from "./contexts/auth";
 import { useContext } from "react";
 import { toast } from "react-toastify";
 import Navbar from "./Components/Navbar";
+import CadastroProd from "./Pages/Produtos/cadastroProd";
 
 const AppRoutes = () => {
   const Private = ({ children }) => {
@@ -52,6 +53,7 @@ const AppRoutes = () => {
               </Private>
             }
           />
+          <Route path="/cadastroProd" element={<CadastroProd />} />
         </Routes>
       </AuthProvider>
     </Router>

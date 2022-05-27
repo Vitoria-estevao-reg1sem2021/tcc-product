@@ -105,3 +105,47 @@ input{
 #lupa{
     margin-right: 0.7%;
 }
+.bnt_add{
+    border-radius: 100%;
+    border: none;
+    background-color: forestgreen;
+    margin-left: 1.2%;
+    position: relative;
+    width: 2.3%;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    text-decoration: none;
+}
+#add_prod{
+margin-top: 4.6px;
+margin-left: 0.6px;
+margin-bottom: 0px;
+}
+#image{
+    opacity: 0;
+    position: absolute;
+    z-index: 99;
+    height:  20px;
+    margin: 0;
+    padding: 0;
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    border: wihte;
+}
+.up-file{
+    background-color: forestgreen;
+    border: 3px solid white;
+    border-radius: 10px;
+    width: 50%;
+    min-width: 120px;
+    align-items: center;
+}
+small{
+    color: white;
+    margin: 5px;
+}
