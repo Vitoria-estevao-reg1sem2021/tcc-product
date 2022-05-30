@@ -41,7 +41,7 @@
 .botao {
     /* height: 10%; */
     width: 25%;
-    background-color: green;
+    background-color: #579200;
     border-radius: 0.7rem;
     color: white;
     font-weight: bold;
@@ -74,7 +74,7 @@
     padding: 0.2%;
     width: 100%;
     text-align: center;
-    color: forestgreen;
+    color: #579200;
     display: inline-block;
 
 }
@@ -94,7 +94,7 @@ input{
     animation-name: fade;
     animation-duration: 2s;
     display: inline-block; */
-    border: 2px solid forestgreen;
+    border: 2px solid #579200;
     border-radius: 5px ;
     width: 50%;
     min-width: 120px;
@@ -108,7 +108,7 @@ input{
 .bnt_add{
     border-radius: 100%;
     border: none;
-    background-color: forestgreen;
+    background-color: #579200;
     margin-left: 1.2%;
     position: relative;
     width: 2.3%;
@@ -137,14 +137,7 @@ margin-bottom: 0px;
     width: 100%;
     border: wihte;
 }
-.up-file{
-    background-color: forestgreen;
-    border: 3px solid white;
-    border-radius: 10px;
-    width: 50%;
-    min-width: 120px;
-    align-items: center;
-}
+
 small{
     color: white;
     margin: 5px;

@@ -1,7 +1,9 @@
 import React, { useState, useContext } from "react";
-import "./layout/index.css";
+import "./layout/cadas_prod.css";
 import { createProduct } from "../../services/api";
 import { AuthContext } from "../../contexts/auth";
+import * as FaIcons from "react-icons/fa";
+
 
 const CadastroProd = () => {
   const [description, setDescription] = useState("");
@@ -22,7 +24,7 @@ const CadastroProd = () => {
         <form onSubmit={handleSubmit}>
           <h1>CADASTRO DE PRODUTOS</h1>
 
-          <div className="cadastro-label">
+          <div className="cadastro-labelp">
             <label>
               Nome do produto
               <div className="cadastro-input">
@@ -37,25 +39,31 @@ const CadastroProd = () => {
               {/* <span>{errors.description?.message}</span> */}
             </label>
           </div>
-          <div className="cadastro-label">
+          <div className="cadastro-labelp">
             <label>
               Preço
               <div className="cadastro-input">
                 <input
-                  type="price"
+                  type="text"
                   name="price"
                   id="price"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
                 />
               </div>
-              {/* <span>{errors.price?.message}</span> */}
             </label>
           </div>
-          <div className="cadastro-label">
+          <div className="cadastro-labelp">
             <label>
-              Imagem
               <div className="up-file">
+              <div className="up-text"
+                  data-text="Adicione uma img do prod"
+                  value="">
+                    <p>Adicione uma imagem para seu poduto!</p>
+                  {/* $("cadastro-label").on("change", "image", function(){
+                    $(this).parent("up-text").attr("data-text", 
+                    $(this).val().replace(/.*(\/|\\)/, ''))}); */}
+                </div>
                 <input
                   type="file"
                   name="image"
@@ -63,11 +71,14 @@ const CadastroProd = () => {
                   value={image}
                   onChange={(e) => setImage(e.target.value)}
                   placeholder="image"
-                  // style={{ display: 'none' }}
+                  hidden
                 />
-                <small id="helpId" > 
-                {/* <FaIcons.FaUpload /> */}
-                </small>
+                <label for="image" id="Up_img_label">
+                  <center>
+                  <FaIcons.FaUpload id="icon_upload"/>
+                  </center>
+                </label>
+
               </div>
               {/* {errors.image && (
             <span>

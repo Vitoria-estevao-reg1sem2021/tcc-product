@@ -1,7 +1,7 @@
 import { getProducts, getProductsImage } from "./../../services/api";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import "./layout/index.css";
+import "./layout/index_prod.css";
 import * as FaIcons from "react-icons/fa";
 
 
