@@ -1,5 +1,5 @@
 .cadastro-form {
-    height: 400px;
+    height: 550px;
     width: 50%;
     /* margin: auto; */
     margin-top: 5%;
@@ -36,7 +36,7 @@
     border: 1px solid white;
     padding-left: 5px;
     /* height: 5%; */
-    width: 100%;
+    /* width: 100%; */
     margin-top: 5px;
     /* animation-name: move;
     animation-duration: 2s; */
@@ -44,7 +44,7 @@
     
 }
 
-.cadastro-input input:hover {
+input:hover {
     border: 1px solid #579200;
 }
 .cadastro-labelp label{
@@ -59,9 +59,9 @@
 
 }
 
-.submit-button button {
-    /* height: 5px; */
-    width: 130%;
+.button-criar button {
+    height: 30px;
+    width: 140%;
     background-color: #579200;
     border-radius: 5px;
     color: white;
@@ -69,6 +69,8 @@
     font-weight: bold;
     cursor: pointer;
     margin-bottom: 20px;
+    margin-left: -6px;
+    margin-top: 20px;
     /* animation-name: move;
     animation-duration: 2s; */
     
@@ -81,29 +83,65 @@
 #Up_img_label{
     background-color: #579200;
     border-radius: 5px;
-    width: 20%;
-    margin-left: 78%;
+    width: 100px;
+    height: 30px;
+    /* margin-left: 0%; */
     display: inline-block;
+    margin-top: 10px;
 }
 #icon_upload{
     color: white;
-    width: 50%;
-    height: 20px;
+    width: 45%;
+    height: 19px;
+    margin-top: 4px;
 
 }
 .up-file{
     background-color: white;
     border-radius: 10px;
-    width: 400px;
+    width: 5px;
     min-width: 120px;
 }
-.up-text{
-    width: 60%;
-    display: inline-block;
-    padding-right: 0px;
-    margin-bottom: 0px;
-    /* margin: 0 auto; */
+
+.id_img {
+    border: none;
 }
-p{
-    font-size: 10px;
-}
+#output{
+    border: none;}
+/* }
+@media(max-width:600px){
+    .cadastro-form {
+        height: 550px;
+        width: 200px;
+        margin-top: 5%;
+    }
+    
+    .cadastro-form h1 {
+        text-align: center;
+        padding-top: 2%;
+        font-size: 30px;
+        color: #579200;
+        margin-bottom: 5px;
+    }
+    
+    .cadastro-form form {
+        height: 100%;
+        width: 100%;
+        gap: 0px;
+        flex-direction: column;
+        background-color: #FAFAD2;
+        border-radius: 5px;
+        animation-name: fade;
+        animation-duration: 2s;
+        box-shadow: 0 0 1em black;
+    } 
+    
+    .cadastro-input input {
+        border-radius: 5px;
+        border: 1px solid white;
+        padding-left: 5px;
+        margin-top: 5px;
+        margin-left: 0px;
+        
+    }
+} */

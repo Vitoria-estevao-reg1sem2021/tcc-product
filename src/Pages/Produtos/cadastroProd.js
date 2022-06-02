@@ -3,14 +3,26 @@ import "./layout/cadas_prod.css";
 import { createProduct } from "../../services/api";
 import { AuthContext } from "../../contexts/auth";
 import * as FaIcons from "react-icons/fa";
+// import {useSelector } from 'react-redux';
 
 
 const CadastroProd = () => {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
+  const imgFunction = (event) => {
+    setImage(event.target.value)
+      const reader = new FileReader();
+      reader.onload = function(){
+        const output = document.getElementById('output');
+        output.src = reader.result;
+        
+      };
+      reader.readAsDataURL(event.target.files[0]);
+  }
 
   const { register } = useContext(AuthContext);
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,12 +30,14 @@ const CadastroProd = () => {
     register(description, price, image);
   };
 
+  // const loggedInAdm = useSelector(state => state.loggedInAdm)
+
+
   return (
     <div className="container">
       <div className="cadastro-form">
         <form onSubmit={handleSubmit}>
           <h1>CADASTRO DE PRODUTOS</h1>
-
           <div className="cadastro-labelp">
             <label>
               Nome do produto
@@ -36,7 +50,6 @@ const CadastroProd = () => {
                   onChange={(e) => setDescription(e.target.value)}
                 />
               </div>
-              {/* <span>{errors.description?.message}</span> */}
             </label>
           </div>
           <div className="cadastro-labelp">
@@ -53,23 +66,25 @@ const CadastroProd = () => {
               </div>
             </label>
           </div>
+          {image != null && image != "" ?  
+          <div className="id_img">
+                <img id="output" style={{
+                  minHeight: "200px",
+                  minWidth:"200px", 
+                  maxHeight: "200px",
+                  maxWidth: "200px",
+                  border: "0px"} }/>
+              </div>
+            :null}
           <div className="cadastro-labelp">
             <label>
-              <div className="up-file">
-              <div className="up-text"
-                  data-text="Adicione uma img do prod"
-                  value="">
-                    <p>Adicione uma imagem para seu poduto!</p>
-                  {/* $("cadastro-label").on("change", "image", function(){
-                    $(this).parent("up-text").attr("data-text", 
-                    $(this).val().replace(/.*(\/|\\)/, ''))}); */}
-                </div>
+              <div >
                 <input
                   type="file"
                   name="image"
                   id="image"
                   value={image}
-                  onChange={(e) => setImage(e.target.value)}
+                  onChange={(e) => imgFunction(e)}
                   placeholder="image"
                   hidden
                 />
@@ -78,18 +93,10 @@ const CadastroProd = () => {
                   <FaIcons.FaUpload id="icon_upload"/>
                   </center>
                 </label>
-
               </div>
-              {/* {errors.image && (
-            <span>
-              *A senha precisa ter no mínimo 8 caracteres; <br /> *A senha
-              precisa ter no mínimo uma letra maiúscula, <br />
-              uma minúscula e um número
-            </span>
-          )} */}
             </label>
           </div>
-          <div className="submit-button">
+          <div className="button-criar">
             <button type="submit">CRIAR</button>
           </div>
         </form>
@@ -97,5 +104,7 @@ const CadastroProd = () => {
     </div>
   );
 };
+
+
 
 export default CadastroProd;

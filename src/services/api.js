@@ -23,3 +23,5 @@ export const getProducts = async () => {
 export const getProductsImage = async () => {
   return api.get("/products/download/");
 };
+
+
