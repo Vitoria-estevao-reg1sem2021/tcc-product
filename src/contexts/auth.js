@@ -3,7 +3,7 @@ import React, { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-import { api, createSession, createUser } from "../services/api";
+import { api, createSession, createUser, getIsAdm } from "../services/api";
 
 export const AuthContext = createContext();
 
@@ -11,6 +11,7 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
   const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isAdm, setIsAdm] = useState(false);
 
   useEffect(() => {
     const recoveredUser = localStorage.getItem("token");
@@ -34,6 +35,8 @@ export const AuthProvider = ({ children }) => {
 
     toast.success("Login bem sucedido");
     setToken(token);
+    const response2 = await getIsAdm();
+    setIsAdm(response2.data)
     navigate("/");
   };
 
@@ -60,6 +63,7 @@ export const AuthProvider = ({ children }) => {
         login,
         register,
         logout,
+        isAdm
       }}
     >
       {children}

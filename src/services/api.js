@@ -23,5 +23,10 @@ export const getProducts = async () => {
 export const getProductsImage = async () => {
   return api.get("/products/download/");
 };
+// /User --> 
+export const getIsAdm = async () => {
+  return api.get("/user");
+};
+
 
 

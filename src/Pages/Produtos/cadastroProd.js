@@ -21,7 +21,7 @@ const CadastroProd = () => {
       reader.readAsDataURL(event.target.files[0]);
   }
 
-  const { register } = useContext(AuthContext);
+  const { register} = useContext(AuthContext);
   
 
   const handleSubmit = (e) => {

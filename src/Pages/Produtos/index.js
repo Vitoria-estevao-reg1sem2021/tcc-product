@@ -1,8 +1,10 @@
 import { getProducts, getProductsImage } from "./../../services/api";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { toast } from "react-toastify";
 import "./layout/index_prod.css";
 import * as FaIcons from "react-icons/fa";
+import {useSelector} from 'react-redux';
+import { AuthContext } from "../../contexts/auth";
 
 
 
@@ -11,8 +13,10 @@ function Produto() {
   const [loading, setLoading] = useState(true);
   const [busca, setBusca] = useState('');
   console.log(busca);
+  const { isAdm} = useContext(AuthContext);
 
   const filtroProd = products.filter((prod) => prod.description.toLowerCase().startsWith(busca.toLowerCase()));
+  // const isAdm = useSelector(state => state.isAdm)
 
   useEffect(() => {
     (async () => {
@@ -32,11 +36,14 @@ function Produto() {
         value={busca}
         onChange={(ev)=> setBusca(ev.target.value)}
       />
+      { isAdm ? 
       <button className="bnt_add">
       <a href="/cadastroProd">
       <FaIcons.FaPlus id="add_prod"/>
+      
        </a>
       </button>
+      :null}
       </div>
       </div>
       <div className="produtos">
